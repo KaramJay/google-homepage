@@ -5,22 +5,29 @@
 
 
 
-ul {
-  display: block; 
+.flex-container 
+.flex-container-r,
+.flex-container-b,
+ {
+  display: flex;
+  flex-direction: row; 
   list-style-type: none;
+  align-items: center;
   margin: 0;
   padding: 14px 16px;
   overflow: hidden;
   background-color: transparent;
 }
 
-li a {
+
+div, 
+a {
   padding: 0px 0px 0px 16px;
   text-decoration: none; 
   color: black; 
 }
 
-li { 
+div { 
     display: inline;
 }
 
@@ -28,6 +35,26 @@ a:hover {
     text-decoration: underline;
 }
 
+
+.right-top-items { 
+    float: right;
+    padding: 5.5px; 
+    background-color: transparent;
+}
+
+.right-top-items:hover { 
+    color: gray;   
+}
+
+.right-top-items:focus {
+    outline: none;
+}
+
+.sign-in-button { 
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
 
 .sign-in-button { 
     background-color: skyblue;
@@ -41,62 +68,39 @@ a:hover {
 .sign-in-button:hover { 
     text-decoration: none;
 }
-
-#right-top-items { 
-    float: right;
+.search-container { 
+  display: flex;
+  flex-flow: column wrap; 
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: transparent;
 }
 
-#right-top-items:hover { 
-    color: gray;   
-}
-
-#right-top-items:focus {
-    outline: none;
-}
-
-.sign-in-button { 
-    float: right;
-    outline: none;
-    text-decoration: none;
-}
-
-#search { 
-    display: block;
-    margin: 0 auto; 
-    padding: 0 auto; 
-    height: auto;
-    width: 100%;
-    text-align: center; 
-}
-
-#searchbar { 
-    text-align: center;
-}
-
-#buttons { 
+button { 
     position: bottom;
-    text-align: center;
+    align-items: center;
 }
 
-#bottom { 
+.flex-container-b { 
     background-color: lightgray;
 }
 
-#bottom-left-items { 
+.bottom-left-items { 
     float: left;
-    padding: 8px 0px 8px 16px;
+    border: 8px 0px 8px 16px;
 }
 
-#bottom-right-items {
+.bottom-right-items {
     float: right;
-    padding: 0px 0px 0px 16px;
+    border: 0px 0px 0px 16px;
 }
 
-#bottom-left-items:active { 
+.bottom-left-items:active { 
     color:red;
 }
 
-#bottom-right-items:active { 
+.bottom-right-items:active { 
     color:red;
 }
 
@@ -111,35 +115,33 @@ a:hover {
 
 <main> 
 <nav>
-<ul id="top">
-<li><a id="about" href="">About</a></li>
-<li><a id="store" href="">Store</a></li>
-<li><a id="right-top-items" href="">Gmail</a></li>
-<li><a id="right-top-items" href="">Images</a></li>
-<li><a id="sign-in-button" href="" class="sign-in-button">Sign In</a></li>
-</ul>
+<div class="flex-container">
+<div><a class="about" href="">About</a></div>
+<div><a class="store" href="">Store</a></div>
+</div> 
+<div class= "flex-container-r">
+<div><a class="right-top-items" href="">Gmail</a></div>
+<div><a class="sign-in-button" href="">Sign in</a><div></div>
+<div><a class="right-top-items" href="">Images</a><div>
+</div>
 </nav>
 <body>
-<div id="search">
-    <img id="google-img" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google"> 
-<form id="searchbar" action="">
-<input type="text">
-<div id="buttons">
-<button type="submit" placeholder="Google Search"></button> 
-<button type="submit" placeholder="I'm Feeling Lucky"></button>
+<div class="search-container">
+<div><img class="google-img" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google"></div>
+<div><form class="searchbar" action=""><input type="text"></form></div>
+<div><button type="submit"></button></div>
+<div><button type="submit"></button></div>
 </div>
-</div>
-</form>
 </body>
 <nav>
-<ul id="bottom"> 
-<li><a id="bottom-left-items" href="">Advertising</a></li>
-<li><a id="bottom-left-items" href="">Business</a></li>
-<li><a id="bottom-left-items" href="">How Search works</a></li>
-<li><a id="bottom-right-items" href="">Privacy</a></li>
-<li><a id="bottom-right-items" href="">Terms</a></li>
-<li><a id="bottom-right-items" href="">Settings</a></li>
-</ul>
+<div class="flex-container-b"> 
+<div><a class="bottom-left-items" style="order: 1" href="">Advertising</a></div>
+<div><a class="bottom-left-items" style="order: 2" href="">Business</a></div>
+<div><a class="bottom-left-items" style="order: 3" href="">How Search works</a></div>
+<div><a class="bottom-right-items" style="order: 4" href="">Privacy</a></div>
+<div><a class="bottom-right-items" style="order: 5" href="">Terms</a></div>
+<div><a class="bottom-right-items" style="order: 6" href="">Settings</a></div>
+</div>
 </nav>
 </main>
 </html> 
